@@ -1,0 +1,76 @@
+{
+  "app-title": "Leandro EPK",
+
+  "login": {
+    "title": "Iniciar sesión",
+    "email-placeholder": "usuario@ejemplo.com",
+    "email-required": "La dirección de correo es obligatoria",
+    "email-invalid": "La dirección de correo no es válida",
+    "password-label": "Contraseña",
+    "password-required": "La contraseña es obligatoria",
+    "password-min-length": "La contraseña debe tener al menos 6 caracteres",
+    "submit-button": "Iniciar sesión",
+    "already-account-link": "¿Tienes cuenta?",
+    "register-link": "Inicia sesión aquí",
+    "guest-link": "Entrar como invitado"
+  },
+
+  "register": {
+    "title": "Registro",
+    "email-placeholder": "usuario@ejemplo.com",
+    "email-required": "La dirección de correo es obligatoria",
+    "email-invalid": "La dirección de correo no es válida",
+    "password-label": "Contraseña",
+    "password-required": "La contraseña es obligatoria",
+    "password-min-length": "La contraseña debe tener al menos 6 caracteres",
+    "submit-button": "Registrarme",
+    "already-account-link": "¿Ya tienes cuenta?",
+    "login-link": "Inicia sesión aquí"
+  },
+
+  "404": {
+    "title": "404",
+    "description": "La página que buscas no existe"
+  },
+
+  "sidenav": {
+    "title": "Menú",
+    "items": {
+      "main": {
+        "title": "Inicio",
+        "about": "Acerca de mí",
+        "dashboard": "Dashboard"
+      },
+      "projects": {
+        "title": "Proyectos",
+        "logos": "Generador de logos",
+        "manager": "Gestor de proyectos",
+        "cutz": "cutz",
+        "wpp-bot": "WPP Manager"
+      },
+      "configs": {
+        "title": "Configuración",
+        "users": "Usuarios",
+        "perms": "Permisos",
+        "me": "Mi cuenta"
+      }
+    }
+  },
+
+  "logout": {
+    "button": "Cerrar sesión",
+    "loading": "Cerrando sesión..."
+  },
+
+  "about": {
+    "title": "Acerca de mí",
+    "intro": "¡Hola! Soy <bold>Leandro</bold>, un desarrollador backend apasionado por crear soluciones limpias, eficientes y escalables. Me especializo en <bold>Laravel/Lumen</bold>, <bold>FastAPI</bold> y <bold>NestJS</bold>, tecnologías que disfruto por su flexibilidad y robustez a la hora de diseñar APIs y sistemas backend bien estructurados.",
+    "extra": "Además de mi trabajo diario, me encanta resolver desafíos de programación en plataformas como <bold>Codewars</bold> y <bold>LeetCode</bold>, donde puedo mejorar mis habilidades en algoritmos y estructuras de datos. También soy fan del <bold>ajedrez</bold>, las <bold>matemáticas</bold> y todo lo que implique <bold>pensamiento lógico</bold>.",
+    "project-description": "Este sitio es una colección de mis proyectos backend con una interfaz pensada para interactuar fácilmente con ellos. Todo el código está construido con buenas prácticas, y trato de enfocarme siempre en la calidad y el detalle."
+  },
+
+  "language-selector": {
+    "title": "Selecciona tu idioma",
+    "placeholder": "Selecciona tu idioma"
+  }
+}

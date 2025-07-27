@@ -1,0 +1,76 @@
+{
+  "app-title": "Leandro EPK",
+
+  "login": {
+    "title": "Login",
+    "email-placeholder": "user@example.com",
+    "email-required": "Email address is required",
+    "email-invalid": "The email address is not valid",
+    "password-label": "Password",
+    "password-required": "Password is required",
+    "password-min-length": "Password must be at least 6 characters long",
+    "submit-button": "Login",
+    "already-account-link": "Already have an account?",
+    "register-link": "Sign in here",
+    "guest-link": "Continue as guest"
+  },
+
+  "register": {
+    "title": "Register",
+    "email-placeholder": "user@example.com",
+    "email-required": "Email address is required",
+    "email-invalid": "The email address is not valid",
+    "password-label": "Password",
+    "password-required": "Password is required",
+    "password-min-length": "Password must be at least 6 characters long",
+    "submit-button": "Sign up",
+    "already-account-link": "Already have an account?",
+    "login-link": "Sign in here"
+  },
+
+  "404": {
+    "title": "404",
+    "description": "The page you are looking for does not exist"
+  },
+
+  "sidenav": {
+    "title": "Menu",
+    "items": {
+      "main": {
+        "title": "Home",
+        "about": "About me",
+        "dashboard": "Dashboard"
+      },
+      "projects": {
+        "title": "Projects",
+        "logos": "Logo generator",
+        "manager": "Project manager",
+        "cutz": "cutz",
+        "wpp-bot": "WPP Manager"
+      },
+      "configs": {
+        "title": "Settings",
+        "users": "Users",
+        "perms": "Permissions",
+        "me": "My account"
+      }
+    }
+  },
+
+  "logout": {
+    "button": "Logout",
+    "loading": "Logging out..."
+  },
+
+  "about": {
+    "title": "About me",
+    "intro": "Hello! I'm <bold>Leandro</bold>, a backend developer passionate about creating clean, efficient, and scalable solutions. I specialize in <bold>Laravel/Lumen</bold>, <bold>FastAPI</bold>, and <bold>NestJS</bold>, technologies that I enjoy because of their flexibility and robustness when designing APIs and backend systems well-structured.",
+    "extra": "In addition to my daily work, I enjoy solving programming challenges on platforms like <bold>Codewars</bold> and <bold>LeetCode</bold>, where I can improve my algorithms and data structures skills. I also love <bold>chess</bold>, <bold>math</bold>, and everything that implies <bold>logical thinking</bold>.",
+    "project-description": "This site is a collection of my backend projects with a designed interface to easily interact with them. All the code is built with good practices, and I try to focus on quality and detail."
+  },
+
+  "language-selector": {
+    "title": "Select your language",
+    "placeholder": "Select your language"
+  }
+}

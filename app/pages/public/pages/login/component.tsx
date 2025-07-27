@@ -1,0 +1,128 @@
+import React from 'react'
+import {
+  Button,
+  Input,
+  Heading,
+  VStack,
+  Field,
+  Text,
+  Link,
+} from '@chakra-ui/react'
+import { RouterLink } from '@/components/custom/RouterLink'
+import { PasswordInput } from '@/components/ui/password-input'
+import { useForm } from 'react-hook-form'
+import authService from '../../services/authService'
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router'
+import { toaster, Toaster } from '@/components/ui/toaster'
+import { useTranslation } from 'react-i18next'
+
+interface FormValues {
+  email: string
+  password: string
+}
+
+export function Page() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>()
+  const navigate = useNavigate()
+  const { t } = useTranslation()
+
+  const submit = async (e: FormValues) => {
+    let error = 'Hubo un error en la solicitud'
+    try {
+      const { data } = await authService.login(e.email, e.password)
+      if (data.success) {
+        toaster.success({ title: 'Login exitoso' })
+        Cookies.set('session', data.data.token)
+        navigate('/')
+        return
+      } else {
+        error = data.message!
+      }
+    } catch (error) {
+      console.log(error)
+    }
+    toaster.error({ title: 'Error al logearse', description: error })
+  }
+
+  const guestLogin = () => {
+    toaster.success({ title: 'Iniciando sesión como invitado' })
+    Cookies.set('session', 'guest')
+    navigate('/')
+  }
+
+  return (
+    <VStack>
+      <Heading mb={6} textAlign="center" size="lg">
+        {t('login.title')}
+      </Heading>
+
+      <form
+        onSubmit={handleSubmit((data) => submit(data))}
+        style={{ width: '100%' }}
+      >
+        <VStack gap={4}>
+          <Field.Root invalid={!!errors.email}>
+            <Field.Label>Email</Field.Label>
+            <Input
+              placeholder="usuario@ejemplo.com"
+              {...register('email', {
+                required: {
+                  value: true,
+                  message: t('login.email-required'),
+                },
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: t('login.email-invalid'),
+                },
+              })}
+            />
+            <Field.ErrorText>
+              {(errors.email?.message as string) ?? ''}
+            </Field.ErrorText>
+          </Field.Root>
+
+          <Field.Root invalid={!!errors.password}>
+            <Field.Label>{t('login.password-label')}</Field.Label>
+            <PasswordInput
+              placeholder="••••••••"
+              {...register('password', {
+                required: {
+                  value: true,
+                  message: t('login.password-required'),
+                },
+                minLength: {
+                  value: 6,
+                  message: t('login.password-min-length'),
+                },
+              })}
+            />
+            <Field.ErrorText>
+              {(errors.password?.message as string) ?? ''}
+            </Field.ErrorText>
+          </Field.Root>
+
+          <Button colorScheme="blue" type="submit" w="full">
+            {t('login.submit-button')}
+          </Button>
+        </VStack>
+      </form>
+
+      <Text mt={4} textAlign="center">
+        {t('login.already-account-link')}{' '}
+        <RouterLink color="blue.500" fontWeight="bold" to="/register">
+          {t('login.register-link')}
+        </RouterLink>
+      </Text>
+
+      <Link color="blue.500" fontWeight="bold" onClick={guestLogin}>
+        {t('login.guest-link')}
+      </Link>
+      <Toaster />
+    </VStack>
+  )
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "title": "main",
+    "icon": "HiHome",
+    "children": [
+      {
+        "title": "about",
+        "icon": "HiSearch",
+        "link": "/about"
+      },
+      {
+        "title": "dashboard",
+        "icon": "MdDashboard",
+        "link": "/dashboard"
+      }
+    ]
+  },
+  {
+    "title": "projects",
+    "icon": "HiCode",
+    "children": [
+      {
+        "title": "logos",
+        "icon": "FaImage",
+        "link": "/projects/logos"
+      },
+      {
+        "title": "manager",
+        "icon": "HiCode",
+        "link": "/projects/wpp-bot"
+      },
+      {
+        "title": "cutz",
+        "icon": "HiScissors",
+        "link": "/projects/cutz"
+      },
+      {
+        "title": "wpp-bot",
+        "icon": "FaWhatsapp",
+        "link": "/projects/manager"
+      }
+    ]
+  },
+  {
+    "title": "configs",
+    "icon": "HiCog",
+    "children": [
+      {
+        "title": "users",
+        "icon": "HiUsers",
+        "link": "/configs/users"
+      },
+      {
+        "title": "perms",
+        "icon": "HiUsers",
+        "link": "/configs/perms"
+      },
+      {
+        "title": "me",
+        "icon": "HiUser",
+        "link": "/configs/me"
+      }
+    ]
+  }
+]
