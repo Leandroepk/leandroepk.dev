@@ -7,6 +7,7 @@ import {
   Drawer,
   Heading,
   HStack,
+  Icon,
   Portal,
   Spacer,
   VStack,
@@ -43,13 +44,26 @@ const LogoutButton = () => {
       variant="ghost"
       loading={loading}
       loadingText={t('logout.loading')}
+      p={0}
+      mt={2}
+      width="100%"
+      justifyContent="flex-start"
     >
-      <BiExit color="red" /> {t('logout.button')}
+      <Icon size="sm" color="red.700">
+        <BiExit color="bg.red" />
+      </Icon>{' '}
+      {t('logout.button')}
     </Button>
   )
 }
 
-const SidenavList = ({ isMobile }: { isMobile: boolean }) => {
+const SidenavList = ({
+  isMobile,
+  setOpen,
+}: {
+  isMobile: boolean
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+}) => {
   const { t } = useTranslation()
   const isMultiple = React.useMemo(() => !isMobile, [isMobile])
   const defaultValue = React.useMemo(
@@ -77,7 +91,12 @@ const SidenavList = ({ isMobile }: { isMobile: boolean }) => {
           <Accordion.ItemContent ml={6}>
             {item.children.map((child) => (
               <Accordion.ItemBody key={child.title}>
-                <RouterLink to={child.link}>
+                <RouterLink
+                  to={child.link}
+                  onClick={() => isMobile && setOpen(false)}
+                  width="100%"
+                  justifyContent="flex-start"
+                >
                   <HStack>
                     {child.icon && <IconByName iconName={child.icon} />}
                     {t(`sidenav.items.${item.title}.${child.title}`)}
@@ -114,8 +133,12 @@ const MobileSidenav = ({
                 <Drawer.Title>Menú</Drawer.Title>
               </Drawer.Header>
               <Drawer.Body>
-                <SidenavList isMobile={true} />
-                <Drawer.Footer display={'flex'}>
+                <SidenavList isMobile={true} setOpen={setOpen} />
+                <Drawer.Footer
+                  display={'flex'}
+                  justifyContent={'flex-start'}
+                  padding={0}
+                >
                   <LogoutButton />
                 </Drawer.Footer>
               </Drawer.Body>
@@ -140,12 +163,14 @@ const DesktopSidenav = () => {
       padding={5}
       width={250}
       align="stretch"
+      borderRightWidth={1}
+      borderColor={'border.success'}
     >
       <VStack align="stretch">
         <Heading size="lg" mb={5}>
           {t('sidenav.title')}
         </Heading>
-        <SidenavList isMobile={false} />
+        <SidenavList isMobile={false} setOpen={() => {}} />
       </VStack>
       <Spacer />
       <LogoutButton />

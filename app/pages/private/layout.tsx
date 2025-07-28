@@ -17,10 +17,9 @@ export default function Layout() {
     <HStack gap={0} height="100vh">
       <Sidenav open={openMenu} setOpen={setOpenMenu} />
       <Box height="100vh" width="100%" display="flex" flexDirection="column">
-        <Toolbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
-        <Box padding={4} width="100%" flex="1" overflowY="auto">
+        <Toolbar openMenu={openMenu} setOpenMenu={setOpenMenu}>
           <Outlet />
-        </Box>
+        </Toolbar>
       </Box>
     </HStack>
   )

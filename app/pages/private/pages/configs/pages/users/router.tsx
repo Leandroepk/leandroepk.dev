@@ -3,8 +3,8 @@ import { Page } from './component'
 
 export function meta() {
   return [
-    { title: 'New React Router App' },
-    { name: 'description', content: 'Welcome to React Router!' },
+    { title: 'Portfolio - Leandro EPK' },
+    { name: 'description', content: 'Users list' },
   ]
 }
 

@@ -3,8 +3,8 @@ import { Page } from './component'
 
 export function meta() {
   return [
-    { title: 'Page not found' },
-    { name: 'description', content: '404 Page not found' },
+    { title: '404' },
+    { name: 'description', content: 'No content found' },
   ]
 }
 

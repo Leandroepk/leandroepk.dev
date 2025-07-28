@@ -15,9 +15,9 @@ import { Trans, useTranslation } from 'react-i18next'
 export function Page() {
   const { t } = useTranslation()
   return (
-    <Box maxW="5xl" mx="auto" py={8} px={4}>
+    <Box>
       <VStack align="start" p={6}>
-        <Heading as="h2" size="xl">
+        <Heading as="h2" size="2xl">
           {t('about.title')}
         </Heading>
 
@@ -68,7 +68,7 @@ export function Page() {
           <Link href="https://github.com/Leandroepk">GitHub</Link>
         </HStack>
 
-        <HStack p={3}>
+        <HStack p={3} marginBottom={{ base: 20, md: 0 }}>
           <Icon as={FaFilePdf} />
           <Link href="/CV_Leandro_EPK.pdf">Currículum</Link>
         </HStack>
